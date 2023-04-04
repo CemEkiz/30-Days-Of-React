@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+      }
+
+      html,
+      body {
+        height: 100%;
+        line-height: 1.5;
+        font-family: 'Montserrat';
+        font-weight: 300;
+        color: black;
+      }
+
+      .name {
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Root -->
+    <div id="root"></div>
+
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.development.js"></script>
+
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel">
+      const root = ReactDOM.createRoot(document.getElementById('root'));
+
+      // Datas
+      const student = {
+        firstName: 'Cem',
+        lastName: 'Ekiz',
+      };
+      const country = 'France';
+      const title = 'Day 02 - Exercise';
+      const gender = 'male';
+      const email = 'ekizcem.pro@gmail.com';
+
+      const userStyles = {
+        fontSize: '32px',
+        backgroundColor: 'green',
+      };
+
+      const user = (
+        <main style={userStyles}>
+          <p>{title}</p>
+          <h1 className='name'>
+            {student.firstName} {student.lastName}
+          </h1>
+          <p>{country}</p>
+          <p>{gender}</p>
+          <p>{email}</p>
+          <p>Calcul : 10 + 10 = {10 + 10}</p>
+        </main>
+      );
+
+      const footerStyles = {
+        fontSize: '24px',
+        backgroundColor: 'yellow',
+      };
+
+      const footer = (
+        <footer style={footerStyles}>
+          <p>Footer</p>
+        </footer>
+      );
+
+      const appStyles = {};
+
+      const app = (
+        <div className='app'>
+          {user}
+          {footer}
+        </div>
+      );
+
+      root.render(app);
+    </script>
+  </body>
+</html>
